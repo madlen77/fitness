@@ -1,23 +1,36 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import home from "../assets/house.svg";
-import weight from "../assets/weight.svg";
-import profile from "../assets/profile.svg";
+import profile from "../assets/weight.svg";
+import weight from "../assets/profile.svg";
+import "./navigation.css"
 
 const navbar = () => {
   return (
     <nav >
       <ul className="bg-black flex fixed bottom-0 left-0 w-full justify-around h-[50px] items-center">
       <li className="block"> 
-      <Link to="/">
+      <NavLink to="/" className={({ isActive}) =>
+                      isActive
+                        ? "active"
+                        : ""
+                    }>
         <img src={home} alt="home" className="relative"/>
-      </Link>
+      </NavLink>
     </li> 
        <li className="block">
-      <Link to="/Browse"><img src={weight} alt=""></img></Link>
+      <NavLink to="/Browse" className={({ isActive}) =>
+                      isActive
+                        ? "active"
+                        : ""
+                    }><img src={weight} alt=""></img></NavLink>
     </li>
     <li className="block">
-      <Link to="/Profile"><img src={profile} alt=""></img></Link>
+      <NavLink to="/Profile" className={({ isActive}) =>
+                      isActive
+                        ? "active"
+                        : ""
+                    }><img src={profile} alt=""></img></NavLink>
     </li> 
     </ul>
     </nav>

@@ -11,13 +11,13 @@ function App() {
     <div>
       <Hallo />
       <div className="flex justify-evenly my-7">
-        <img src={woman} alt="woman is stretching" />
+        <img src={woman} alt="woman is stretching" className="h-64" />
       </div>
       <div className="flex justify-between">
         <h2 className="ml-5">Dein Workout heute</h2>
         <p className="self-end mr-5">Trainingsplan</p>
       </div>
-      <WorkoutButton text="noooo" />
+      <WorkoutButton text="" />
       <Navbar />
     </div>
   );
