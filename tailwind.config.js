@@ -6,9 +6,9 @@ module.exports = {
           dark : '#202430',
           medium : '#3A4151',
           white : '#FBFBFB',
-          rose : 'linear-gradient(-45deg, #FF99C3, #FFD162);',
-          green : 'linear-gradient(-45deg, #F5FFA0, #3EF3E8);',
-          blue : 'linear-gradient(-45deg, #3A4AE4, #3B85E6, #3EE4E8, #3EF3E8)',
+          rose : 'bg-gradient-to-br from-[#FFD162] to-[#FF99C3]',
+          green : 'bg-gradient-to-br from-[#3EF3E8] to-[#F5FFA0]',
+          blue : 'bg-gradient-to-br from-[#FFD162] via-[#3EE4E8] via-[#3B85E6] to-[#3EF3E8]',
         },
         fontFamily: {
           font : ['Poppins']
