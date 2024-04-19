@@ -17,7 +17,7 @@ function App() {
         <h2 className="ml-5">Dein Workout heute</h2>
         <p className="self-end mr-5">Trainingsplan</p>
       </div>
-      <WorkoutButton text="" />
+      <WorkoutButton day="2" time="26" target="Beweglichkeit" text="Titel des Programms" />
       <Navbar />
     </div>
   );
