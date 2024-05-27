@@ -7,7 +7,7 @@ import { useQuery, gql } from "@apollo/client";
 import GET_TITLES from "../queries/titles";
 
 function Browse() {
-  const colors = ['rose', 'green', 'blue'];
+  const colors = ['rose rounded-[2.5rem] w-11/12 h-[13.5rem] mt-5 flex items-center justify-center', 'green rounded-[2.5rem] w-11/12 h-[13.5rem] mt-5 flex items-center justify-center', 'blue rounded-[2.5rem] w-11/12 h-[13.5rem] mt-5 flex items-center justify-center'];
   const { loading, error, data } = useQuery(GET_TITLES);
 
   if (loading) return <p>Loading...</p>;
@@ -15,11 +15,13 @@ function Browse() {
 
   console.log(data);
 
+  const {programs} = data;
+
   return (
     <div>
-      {data.programs.map((program, index) => (
+      {programs.map((program, index) => (
         <div key={program.id}>
-        <WorkoutButton text={program.name} link={`program/:program.id`} style={colors[index % colors.length]}/>
+        <WorkoutButton text={program.name} link={program.id} style={colors[index % colors.length]}/>
       </div>
       ))}
       <Navbar />

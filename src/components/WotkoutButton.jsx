@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 class Workout extends React.Component {
   render() {
+    const id = this.props.link;
     if (this.props.text === "") {
       return (
         <ul>
@@ -28,7 +29,7 @@ class Workout extends React.Component {
             >
               <h3 className="mt-24 ml-10">Tag {this.props.day}</h3>
               <h2 className="ml-10 text-white">{this.props.text}</h2>
-              <p className="ml-10 text-sm">{this.props.time} Min. {this.props.target}</p>
+              <p className="ml-10 text-sm">{this.props.time} Min. · {this.props.target}</p>
             </NavLink>
           </li>
         </ul>
@@ -38,8 +39,8 @@ class Workout extends React.Component {
         <ul >
         <li className="flex justify-evenly">
           <NavLink
-            to={this.props.link}
-            className="rounded-[2.5rem] w-11/12 h-[13.5rem] mt-5 flex items-center justify-center "
+            to={`/program/${id}`}
+            className={this.props.style}
           >
             <p>
               {this.props.text}
