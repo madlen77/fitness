@@ -6,9 +6,11 @@ import { render } from "react-dom";
 class Button extends React.Component {
     render(){
   return (
-    <button className="rose rounded-3xl py-2 px-6"> 
+    <NavLink to={`/program/${this.props.programId}/workout/${this.props.workoutId}/${this.props.day}/${this.props.exercise}`}>
+<button className="rose rounded-3xl py-2 px-6"> 
         <p className="text-black">{this.props.text}</p>
     </button>
+    </NavLink>
   );
 }
 };

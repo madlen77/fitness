@@ -1,12 +1,14 @@
 import React from "react";
 import { VictoryPie } from "victory-pie";
+import PropTypes from "prop-types";
 
-const PieChart = () => {
+
+const PieChart = (props) => {
   const myData = [
-    { x: "Group A", y: 300 },
-    { x: "Group B", y: 400 },
-    { x: "Group C", y: 300 },
-    { x: "Group D", y: 300 },
+    { x: "Group A", y: props.weight },
+    { x: "Group B", y: props.coordination },
+    { x: "Group C", y: props.cardio },
+    { x: "Group D", y: props.mobility },
   ];
   return (
     <div className="flex items-center justify-evenly">
@@ -48,5 +50,9 @@ const PieChart = () => {
     </div>
   );
 };
+
+PieChart.propTypes = {
+  weight: PropTypes.number
+}
 
 export default PieChart;

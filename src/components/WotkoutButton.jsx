@@ -13,7 +13,7 @@ class Workout extends React.Component {
               className="rounded-[2.5rem] bg-medium w-11/12 h-[13.5rem] mt-5"
             >
               <h3 className="mt-20 ml-14">
-                Bitte starte zu erst ein Program
+                Bitte starte zuerst ein Program
               </h3>
             </NavLink>
           </li>

@@ -13,8 +13,6 @@ function Browse() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error : {error.message}</p>;
 
-  console.log(data);
-
   const {programs} = data;
 
   return (

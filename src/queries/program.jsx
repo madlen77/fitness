@@ -14,22 +14,40 @@ const GET_PROGRAM = gql`
         id
         day
         workout {
+          id
           name
           duration
+
           exercises {
             ... on ExerciseWithDuration {
               id
+              duration
+              exercise {
+                description
+                id
+                name
+              }
             }
             ... on ExerciseWithReps {
               id
+              exercise {
+                description
+                id
+                name
+              }
+              reps
             }
           }
+
         }
+
       }
+
       workouts {
         category
         id
       }
+
     }
   }
 `;

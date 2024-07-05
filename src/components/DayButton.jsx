@@ -13,7 +13,7 @@ class Button extends React.Component {
         <ul >
         <li >
           <NavLink className="h-[100px] flex w-full rounded-3xl bg-medium mb-3"
-            to={`/program/workout`}
+            to={`/program/${this.props.programId}/workout/${this.props.workoutId}/${this.props.day}`}
           >
           <div className="w-[26.6%] h-full rounded-l-3xl  rose"></div>
           <div>
