@@ -53,3 +53,7 @@ h3 {
 .blue {
   background: linear-gradient(135deg, #3ef3e8, #3ee4e8, #3b85e6, #3a4ae4);
 }
+
+.active {
+  filter: invert(96%) sepia(0%) saturate(18%) hue-rotate(318deg) brightness(103%) contrast(105%);
+}

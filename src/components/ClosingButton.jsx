@@ -1,7 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-import PropTypes from "prop-types";
 
 import close from "../assets/close.svg";
 
@@ -14,10 +12,6 @@ function ClosingButton({ content }) {
       </button>
     </div>
   );
-}
-
-ClosingButton.propTypes = {
-  
 }
 
 export default ClosingButton;

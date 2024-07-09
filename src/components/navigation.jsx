@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import home from "../assets/house.svg";
 import profile from "../assets/weight.svg";
 import weight from "../assets/profile.svg";
-import "./navigation.css";
 
 const navbar = () => {
   return (
