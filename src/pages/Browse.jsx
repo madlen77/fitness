@@ -1,8 +1,8 @@
 import React, { createContext, useContext } from "react";
 import { useQuery } from "@apollo/client";
 
-import { ProgramContext } from "../main";
 import GET_TITLES from "../queries/titles";
+import CreateEntries from "../components/GeneratorSite";
 
 import Navbar from "../components/navigation";
 import WorkoutButton from "../components/WotkoutButton";
@@ -21,8 +21,9 @@ const Browse = () => {
   const { programs } = data;
 
   return (
-    <ProgramContext.Provider value={programs}>
       <div>
+        <h2 className="my-9 ml-5">Browse</h2>
+        <CreateEntries />
         {programs.map((program, index) => (
           <div key={program.id}>
             <WorkoutButton
@@ -35,7 +36,6 @@ const Browse = () => {
 
         <Navbar />
       </div>
-    </ProgramContext.Provider>
   );
 };
 

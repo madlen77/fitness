@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-function Button({ programId, workoutId, day, exercise, text, onClick }) {
+function Button({ workoutId, exercise, text, onClick }) {
   if (text === "los!") {
     return (
       <NavLink
-        to={`/program/${programId}/workout/${workoutId}/${day}/${exercise}`}
+        to={`/workout/${workoutId}/${exercise}`}
       >
         <button className="rose rounded-3xl py-2 px-6">
           <p className="text-black">{text}</p>

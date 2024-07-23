@@ -4,12 +4,10 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  gql,
 } from "@apollo/client";
 import {
   createBrowserRouter,
   RouterProvider,
-  useLocation,
   Navigate,
 } from "react-router-dom";
 
@@ -30,6 +28,7 @@ export const UserContext = createContext();
 export const DayContext = createContext();
 export const ProgramContext = createContext();
 export const NameContext = createContext();
+export const WorkoutContext = createContext();
 export const ThemeContext = createContext(null);
 
 const PrivateRoute = ({ children }) => {
@@ -83,7 +82,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/Profile",
-    element: <Profile />,
+    element: (
+      <PrivateRoute>
+        <Profile />
+      </PrivateRoute>
+    ),
     errorElement: <Error />,
   },
   {
@@ -93,12 +96,21 @@ const router = createBrowserRouter([
   },
   {
     path: "/program/:programId/workout/:workoutId/:day",
-    element: <Workout />,
+    element: (
+      <PrivateRoute>
+        <Workout />
+      </PrivateRoute>
+    ),
     errorElement: <Error />,
   },
   {
-    path: "/program/:programId/workout/:workoutId/:day/:exercise",
-    element: <Exercise />,
+    path: "/workout/:workoutId/:exercise",
+
+    element: (
+      <PrivateRoute>
+        <Exercise />
+      </PrivateRoute>
+    ),
     errorElement: <Error />,
   },
 ]);
@@ -108,13 +120,16 @@ const AppProvider = ({ children }) => {
   const [currentDay, setCurrentDay] = useState(null);
   const [currentProgram, setCurrentProgram] = useState(null);
   const [name, setName] = useState(null);
+  const [currentWorkout, setWorkout] = useState(null);
 
   return (
     <UserContext.Provider value={{ email, setEmail }}>
       <DayContext.Provider value={{ currentDay, setCurrentDay }}>
         <ProgramContext.Provider value={{ currentProgram, setCurrentProgram }}>
           <NameContext.Provider value={{ name, setName }}>
-            {children}
+            <WorkoutContext.Provider value={{ currentWorkout, setWorkout }}>
+              {children}
+            </WorkoutContext.Provider>
           </NameContext.Provider>
         </ProgramContext.Provider>
       </DayContext.Provider>

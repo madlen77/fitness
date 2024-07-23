@@ -72,13 +72,13 @@ function Program() {
 
         <div className="bg-medium pl-5 pr-9 py-8">
           <p>{program.description}</p>
-          <div className="flex justify-center mt-8">
+        </div>
+          <div className="flex fixed bottom-20 z-10 w-full justify-center mt-8">
             <Button text="jetzt starten" />
           </div>
-        </div>
         <div className="mt-8 mx-5">
           <h3 className="mb-5">So ist das Programm aufgeteilt:</h3>
-          <PieChart
+          <PieChart 
             weight={countDaysWithWorkoutCategory("weightTraining")}
             mobility={countDaysWithWorkoutCategory("mobility")}
             cardio={countDaysWithWorkoutCategory("cardio")}
